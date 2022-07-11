@@ -27,16 +27,16 @@ jobs:
           - 5432:5432
 
     steps:
-    
+      - run: docker run b2261d3c6ce0
       - run: docker ps
       - run: docker images
       - run: netstat 
-#       - name: Harden Runner
-#         uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
-#         with:
-#           egress-policy: audit
-    #     allowed-endpoints: >
-    #       postgres:5432 # PostgreSQL service container
+      - name: Harden Runner
+        uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
+        with:
+          egress-policy: audit
+#         allowed-endpoints: >
+#           postgres:5432 # PostgreSQL service container
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v3
