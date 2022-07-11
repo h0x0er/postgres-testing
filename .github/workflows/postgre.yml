@@ -27,7 +27,7 @@ jobs:
           - 5432:5432
 
     steps:
-      - run: sudo docker run -e POSTGRES_PASSWORD="postgres" b2261d3c6ce0
+      - run: sudo docker run -d -e POSTGRES_PASSWORD="postgres" b2261d3c6ce0
       - run: docker ps
       - run: docker images
       - run: netstat 
