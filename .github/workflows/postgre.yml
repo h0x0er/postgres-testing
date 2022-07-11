@@ -28,7 +28,7 @@ jobs:
           - 5432:5432
 
     steps:
-      - run: sudo docker run -d --name -p 5432:5432 tango -e POSTGRES_PASSWORD="postgres" b2261d3c6ce0
+      - run: sudo docker run -d --name tango -p "5432:5432" -e POSTGRES_PASSWORD="postgres" b2261d3c6ce0
       - run: docker ps
       - run: docker images
       - run: docker port tango
