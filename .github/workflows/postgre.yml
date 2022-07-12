@@ -34,7 +34,7 @@ jobs:
       - run: docker images
       - run: docker port tango
       - name: Harden Runner
-        uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
+        uses: h0x0er/harden-runner@main
         with:
           egress-policy: audit
 #         allowed-endpoints: >
