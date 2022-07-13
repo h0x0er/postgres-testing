@@ -23,7 +23,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-          --restart always
+#           --restart always
         ports:
           # Maps tcp port 5432 on service container to the host
           - 5432:5432
@@ -32,7 +32,7 @@ jobs:
       - run: cat /etc/docker/daemon.json
       - run: docker ps
       - name: Harden Runner
-        uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
+        uses: h0x0er/harden-runner@docker-reload
         with:
           egress-policy: audit
 #         allowed-endpoints: >
