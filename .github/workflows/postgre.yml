@@ -32,7 +32,7 @@ jobs:
       - run: cat /etc/docker/daemon.json
       - run: docker ps
       - name: Harden Runner
-        uses: h0x0er/harden-runner@docker-reload
+        uses: h0x0er/harden-runner@docker-reload2
         with:
           egress-policy: audit
 #         allowed-endpoints: >
